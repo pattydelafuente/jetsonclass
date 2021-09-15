@@ -27,3 +27,9 @@ sudo docker run --runtime nvidia -it --rm --network host \
     --volume ~/nvdli-data:/nvdli-nano/data \
     --device /dev/video0 \
 nvcr.io/nvidia/l4t-ml:r32.6.1-py3
+
+### This container is from the Getting Started with Jetson
+sudo docker run --runtime nvidia -it --rm --network host \
+    --volume ~/nvdli-data:/nvdli-nano/data \
+    --device /dev/video0 \
+    nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
