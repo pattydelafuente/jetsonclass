@@ -21,7 +21,7 @@ sudo nmcli device wifi connect 'enterRouterName' password 'enterRouterPassword'
 
 sudo docker pull nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
-### Run the container by Executing the following:
+### Run the container by Executing the following (this is a container for in class exercises:
 
 sudo docker run --runtime nvidia -it --rm --network host \\
     --volume ~/nvdli-data:/nvdli-nano/data \\
@@ -29,14 +29,16 @@ sudo docker run --runtime nvidia -it --rm --network host \\
 nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
 ### This container is from the DLI Getting Started with Jetson
-### Refer to the DLI Lab for instructions. Command with suggested tag is below
+## Refer to the DLI Lab for instructions. Command with suggested tag is below:
+
 sudo docker run --runtime nvidia -it --rm --network host \\
     --volume ~/nvdli-data:/nvdli-nano/data \\
     --device /dev/video0 \\
     nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
     
 ### This container is from the DLI Video Analytics  with Jetson and Deepstream
-### Refer to the DLI Lab for instructions. Command with suggested tag is below
+## Refer to the DLI Lab for instructions. Command with suggested tag is below:
+
 sudo docker run --runtime nvidia -it --rm --network host \\
     -v /tmp/.X11-unix/:/tmp/.X11-unix \\
     -v /tmp/argus_socket:/tmp/argus_socket \\
