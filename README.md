@@ -23,13 +23,23 @@ sudo docker pull nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
 ### Run the container by Executing the following:
 
-sudo docker run --runtime nvidia -it --rm --network host \
-    --volume ~/nvdli-data:/nvdli-nano/data \
-    --device /dev/video0 \
+sudo docker run --runtime nvidia -it --rm --network host \\
+    --volume ~/nvdli-data:/nvdli-nano/data \\
+    --device /dev/video0 \\
 nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
-### This container is from the Getting Started with Jetson
-sudo docker run --runtime nvidia -it --rm --network host \
-    --volume ~/nvdli-data:/nvdli-nano/data \
-    --device /dev/video0 \
+### This container is from the DLI Getting Started with Jetson
+### Refer to the DLI Lab for instructions. Command with suggested tag is below
+sudo docker run --runtime nvidia -it --rm --network host \\
+    --volume ~/nvdli-data:/nvdli-nano/data \\
+    --device /dev/video0 \\
     nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
+    
+### This container is from the DLI Video Analytics  with Jetson and Deepstream
+### Refer to the DLI Lab for instructions. Command with suggested tag is below
+sudo docker run --runtime nvidia -it --rm --network host \\
+    -v /tmp/.X11-unix/:/tmp/.X11-unix \\
+    -v /tmp/argus_socket:/tmp/argus_socket \\
+    -v ~/my_apps:/dli/task/my_apps \\
+    --device /dev/video0 \\
+    nvcr.io/nvidia/dli/dli-nano-deepstream:v2.0.0-DS6.0.1
